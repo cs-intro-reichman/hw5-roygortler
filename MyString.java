@@ -100,7 +100,7 @@ public class MyString {
               for(int j=0;j<str1.length();j++){
                   if(str2.charAt(i)==str1.charAt(j)&&i!=0)
                   str1= str1.substring(0, j) + str1.substring(j + 1);
-                  if(str2.charAt(i)==str1.charAt(j)&&i==0)
+                  if(str2.charAt(i)==str1.charAt(j)&&j==0)
                   str1=str1.substring(1);
               }
           }return str1;
