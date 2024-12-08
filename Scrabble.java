@@ -52,7 +52,7 @@ public class Scrabble {
 	// Checks if the given word is in the dictionary.
 	public static boolean isWordInDictionary(String word) {
 		for(int i=0;i<DICTIONARY.length;i++){
-			if(DICTIONARY[i].equals(word))
+			if (DICTIONARY[i] != null && DICTIONARY[i].equals(word)) 
 			return true;
 			
 		}return false;
@@ -90,7 +90,13 @@ public class Scrabble {
 	}
 	// If the character is not a valid letter, return 0
 	
-}System.out.println(x);return x;}
+}
+x=x*word.length();
+if(word.length()==10)
+x+=50;
+if(MyString.subsetOf("runi",word))
+x+=1000;
+return x;}
 	
 
 	// Creates a random hand of length (HAND_SIZE - 2) and then inserts
@@ -124,7 +130,9 @@ public class Scrabble {
 			{if(MyString.subsetOf(input,hand))
 				for(int i=0;i<DICTIONARY.length;i++)
 				{if(DICTIONARY[i]!=null&&DICTIONARY[i].equals(input))
-			{hand=MyString.remove(hand,input);score+=wordScore(input);break;}
+			{hand=MyString.remove(hand,input);
+				score+=wordScore(input);
+				System.out.println("'"+input+"' -> score: "+wordScore(input));break;}
 			}}else
 			{hand="";
 				break;}

@@ -63,11 +63,15 @@ public class MyString {
        */
       public static String spacedString(String str) {
           int c=0;
-          String str1="";  
-             while(c<str.length()){
+          String str1=" "; 
+          if(str.isEmpty())
+          return str1; 
+             while(c<str.length()-1){
               str1=str1+str.charAt(c)+" ";
               c++;
-          }return str1;
+              
+          }str1=str1+""+str.charAt(str.length()-1);
+          return str1;
       }
     
       /**
@@ -96,15 +100,19 @@ public class MyString {
        * @return a string consisting of str1 minus all the characters of str2
        */
       public static String remove(String str1, String str2) {
+        if(str2.isEmpty())
+        return str1;
+        if(str1.charAt(0)==str2.charAt(0))
+        {str1=str1.substring(1);}
           for(int i=0;i<str2.length();i++){
               for(int j=0;j<str1.length();j++){
-                  if(str2.charAt(i)==str1.charAt(j)&&i!=0)
+                  if(str2.charAt(i)==str1.charAt(j))
                   str1= str1.substring(0, j) + str1.substring(j + 1);
-                  if(str2.charAt(i)==str1.charAt(j)&&j==0)
-                  str1=str1.substring(1);
-              }
-          }return str1;
-      }
+                  
+                 }   }
+          
+          return str1;}
+      
   
 
     /**
