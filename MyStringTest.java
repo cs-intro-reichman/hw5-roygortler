@@ -1,24 +1,19 @@
 public class MyStringTest {
     public static void main(String[] args) {
-       // if (args.length == 0) {
-         //   System.out.println("Please provide a specific test to run: countChar, subsetOf, spacedString, randomStringOfLetters, or remove.");
-           // return;
-        //}
-        // Run specific test based on argument
-        //switch (args[0]) {
-            //case "countChar":
-             testCountChar(); //break;
-            //case "subsetOf":
-             testSubsetOf();// break;
-            //case "spacedString":
-             testSpacedString(); //break;
-            //case "randomStringOfLetters":
-             testRandomStringOfLetters();// break;
-            //case "remove":
-             testRemove(); //break;
-           // default: System.out.println("Unknown test: " + args[0]);
+        if (args.length == 0) {
+            System.out.println("Please provide a specific test to run: countChar, subsetOf, spacedString, randomStringOfLetters, or remove.");
+            return;
         }
-    
+        // Run specific test based on argument
+        switch (args[0]) {
+            case "countChar": testCountChar(); break;
+            case "subsetOf": testSubsetOf(); break;
+            case "spacedString": testSpacedString(); break;
+            case "randomStringOfLetters": testRandomStringOfLetters(); break;
+            case "remove": testRemove(); break;
+            default: System.out.println("Unknown test: " + args[0]);
+        }
+    }
 
     private static void testCountChar() {
         System.out.println("\nTesting countChar:");
@@ -40,10 +35,10 @@ public class MyStringTest {
 
     private static void testSpacedString() {
         System.out.println("\nTesting spacedString:");
-        System.out.println("silent -> \"" + MyString.spacedString("silent") + "\" (expected:s i l e n t)");
-        System.out.println("a -> \"" + MyString.spacedString("a") + "\" (expected:a)");
-        System.out.println("empty string -> \"" + MyString.spacedString("") + "\" (expected:)");
-        System.out.println("hi -> \"" + MyString.spacedString("hi") + "\" (expected:h i)");
+        System.out.println("silent -> \"" + MyString.spacedString("silent") + "\" (expected: s i l e n t)");
+        System.out.println("a -> \"" + MyString.spacedString("a") + "\" (expected: a)");
+        System.out.println("empty string -> \"" + MyString.spacedString("") + "\" (expected: )");
+        System.out.println("hi -> \"" + MyString.spacedString("hi") + "\" (expected: h i)");
     }
 
     private static void testRandomStringOfLetters() {
