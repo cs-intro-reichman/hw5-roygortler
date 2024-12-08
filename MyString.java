@@ -36,23 +36,14 @@ public class MyString {
        * @return true is str1 is a subset of str2, false otherwise
        */
       public static boolean subsetOf(String str1, String str2) {
-        int x=0;
-        int c=0;if (str1.isEmpty()) return true; 
-        for(int i=0;i<str1.length();i++){
-            for(int j=0;j<str2.length();j++){
-                if(str1.charAt(i)==str2.charAt(j)&&j==0)
-                {str2=str2.substring(1);
-                   
-                    x++;break;}
-                if(str1.charAt(i)==str2.charAt(j)&&j!=0)
-                {x++;
-                break;}}
-            } 
-        
-        
-       if(x==str1.length())
-       { 
-        return true;}return false;}
+        for(int i = 0; i < str1.length(); i++){
+            if(countChar(str2, str1.charAt(i)) < countChar(str1, str1.charAt(i)))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
       /** Returns a string which is the same as the given string, with a space
        * character inserted after each 
        * character in the given string, except
@@ -71,7 +62,7 @@ public class MyString {
               str1=str1+str.charAt(c)+" ";
               c++;
               
-          }str1=str1+""+str.charAt(str.length()-1);
+          }str1=str1+""+str.charAt(c);
           return str1;
       }
     
