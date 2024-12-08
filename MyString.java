@@ -63,7 +63,7 @@ public class MyString {
        */
       public static String spacedString(String str) {
           int c=0;
-          String str1=" "; 
+          String str1=""; 
           if(str.isEmpty())
           return str1; 
              while(c<str.length()-1){
