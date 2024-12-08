@@ -26,7 +26,7 @@ public class MyString {
           x++;
         }return x;
       }
-  
+     
       /** Returns true if str1 is a subset string str2, false otherwise.
        *  For example, "spa" is a subset of "space", and "pass" is not
        *  a subset of "space".

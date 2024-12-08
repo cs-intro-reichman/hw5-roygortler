@@ -126,23 +126,24 @@ return x;}
 			String input = in.readString();
 			//// Replace the following break statement with code
 			//// that completes the hand playing loop
+			if(input.equals("."))
+			hand="";
 			if(!input.equals("."))
 			{if(MyString.subsetOf(input,hand))
 				for(int i=0;i<DICTIONARY.length;i++)
 				{if(DICTIONARY[i]!=null&&DICTIONARY[i].equals(input))
 			{hand=MyString.remove(hand,input);
 				score+=wordScore(input);
-				System.out.println("'"+input+"' -> score: "+wordScore(input));break;}
+				System.out.println(input + " earned " +wordScore(input) + " points. Score: " + score + " points\n");break;}
 			}}else
 			{hand="";
 				break;}
 		}
-		if (hand.length() == 0) {
-	        System.out.println("Ran out of letters. Total score: " + score + " points");
-		} else {
+		if (hand.isEmpty()) {
 			System.out.println("End of hand. Total score: " + score + " points");
 		}
 	}
+	
 
 	// Plays a Scrabble game. Prompts the user to enter 'n' for playing a new hand, or 'e'
 	// to end the game. If the user enters any other input, writes an error message.
