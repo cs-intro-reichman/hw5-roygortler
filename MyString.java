@@ -37,7 +37,8 @@ public class MyString {
        */
       public static boolean subsetOf(String str1, String str2) {
         int x=0;
-        int c=0;for(int i=0;i<str1.length();i++){
+        int c=0;if (str1.isEmpty()) return true; 
+        for(int i=0;i<str1.length();i++){
             for(int j=0;j<str2.length();j++){
                 if(str1.charAt(i)==str2.charAt(j)&&j==0)
                 {str2=str2.substring(1);
