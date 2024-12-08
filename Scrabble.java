@@ -112,7 +112,7 @@ return x;}
     // 2. The user gets the Scrabble points of the entered word.
     // 3. The user is prompted to enter another word, or '.' to end the hand. 
 	public static void playHand(String hand) {
-		int n = hand.length();
+		
 		int score = 0;
 		// Declares the variable in to refer to an object of type In, and initializes it to represent
 		// the stream of characters coming from the keyboard. Used for reading the user's inputs.   
@@ -126,18 +126,23 @@ return x;}
 			String input = in.readString();
 			//// Replace the following break statement with code
 			//// that completes the hand playing loop
-			if(input.equals("."))
-			hand="";
+			
+	
 			if(!input.equals("."))
 			{if(MyString.subsetOf(input,hand))
-				for(int i=0;i<DICTIONARY.length;i++)
-				{if(DICTIONARY[i]!=null&&DICTIONARY[i].equals(input))
+				
+				{if (isWordInDictionary(input)) 
 			{hand=MyString.remove(hand,input);
 				score+=wordScore(input);
 				System.out.println(input + " earned " +wordScore(input) + " points. Score: " + score + " points\n");break;}
+			}else 
+			{
+				System.out.println("No such word in the dictionary. Try again.");
 			}}else
-			{hand="";
-				break;}
+			{if (input.equals(".")) {
+				System.out.println("End of hand. Total score: " + score + " points");
+				break;
+			}}
 		}
 		if (hand.isEmpty()) {
 			System.out.println("End of hand. Total score: " + score + " points");
