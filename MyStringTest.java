@@ -40,10 +40,10 @@ public class MyStringTest {
 
     private static void testSpacedString() {
         System.out.println("\nTesting spacedString:");
-        System.out.println("silent -> \"" + MyString.spacedString("silent") + "\" (expected: s i l e n t)");
-        System.out.println("a -> \"" + MyString.spacedString("a") + "\" (expected: a)");
-        System.out.println("empty string -> \"" + MyString.spacedString("") + "\" (expected: )");
-        System.out.println("hi -> \"" + MyString.spacedString("hi") + "\" (expected: h i)");
+        System.out.println("silent -> \"" + MyString.spacedString("silent") + "\" (expected:s i l e n t)");
+        System.out.println("a -> \"" + MyString.spacedString("a") + "\" (expected:a)");
+        System.out.println("empty string -> \"" + MyString.spacedString("") + "\" (expected:)");
+        System.out.println("hi -> \"" + MyString.spacedString("hi") + "\" (expected:h i)");
     }
 
     private static void testRandomStringOfLetters() {
