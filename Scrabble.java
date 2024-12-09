@@ -127,7 +127,11 @@ return x;}
 			//// Replace the following break statement with code
 			//// that completes the hand playing loop
 			
-	
+			if (input.equals(".")) {
+				System.out.println("End of hand. Total score: " + score + " points");
+				break;
+			}
+			else
 			if(!input.equals("."))
 			{if(MyString.subsetOf(input,hand))
 				
@@ -135,18 +139,21 @@ return x;}
 			{hand=MyString.remove(hand,input);
 				score+=wordScore(input);
 				System.out.println(input + " earned " +wordScore(input) + " points. Score: " + score + " points\n");break;}
-			}else 
+	
+			else 
+				{
+					System.out.println("No such word in the dictionary. Try again.");
+				}
+			} }
+			else 
 			{
-				System.out.println("No such word in the dictionary. Try again.");
-			}}else
-			{if (input.equals(".")) {
-				System.out.println("End of hand. Total score: " + score + " points");
-				break;
-			}}
-		}
+				System.out.println("Invalid word. Try again.");
+			}
+		
+	
 		if (hand.isEmpty()) {
 			System.out.println("End of hand. Total score: " + score + " points");
-		}
+		}}
 	}
 	
 
