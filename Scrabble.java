@@ -112,7 +112,7 @@ return x;}
     // 2. The user gets the Scrabble points of the entered word.
     // 3. The user is prompted to enter another word, or '.' to end the hand. 
 	public static void playHand(String hand) {
-		
+		int n = hand.length();
 		int score = 0;
 		// Declares the variable in to refer to an object of type In, and initializes it to represent
 		// the stream of characters coming from the keyboard. Used for reading the user's inputs.   
@@ -124,36 +124,29 @@ return x;}
 			// non-whitespace characters. Whitespace is either space characters, or  
 			// end-of-line characters.
 			String input = in.readString();
-			//// Replace the following break statement with code
-			//// that completes the hand playing loop
 			
-			if (input.equals(".")) {
-				System.out.println("End of hand. Total score: " + score + " points");
+			if(input.charAt(0) == '.'){
 				break;
 			}
-			else
-			if(!input.equals("."))
-			{if(MyString.subsetOf(input,hand))
-				
-				{if (isWordInDictionary(input)) 
-			{hand=MyString.remove(hand,input);
-				score+=wordScore(input);
-				System.out.println(input + " earned " +wordScore(input) + " points. Score: " + score + " points\n");break;}
-	
-			else 
-				{
-					System.out.println("No such word in the dictionary. Try again.");
-				}
-			} }
-			else 
+			
+			if(MyString.subsetOf(input, hand) && isWordInDictionary(input))
 			{
+				
+				
+				score += wordScore(input);
+				hand = MyString.remove(hand, input);
+				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
+				System.out.println();
+			} else {
+				
 				System.out.println("Invalid word. Try again.");
 			}
-		
-	
-		if (hand.isEmpty()) {
+		}
+		if (hand.length() == 0) {
+	        System.out.println("Ran out of letters. Total score: " + score + " points");
+		} else {
 			System.out.println("End of hand. Total score: " + score + " points");
-		}}
+		}
 	}
 	
 
